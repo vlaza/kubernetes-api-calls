@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: SERVICE_NAME
+  labels:
+    app: APP_LABEL
+spec:
+  type: LoadBalancer
+  ports:
+  - port: CONTAINER_PORT
+  selector:
+    app: APP_LABEL

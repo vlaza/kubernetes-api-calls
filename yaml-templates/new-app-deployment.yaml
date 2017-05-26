@@ -1,0 +1,27 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  name: APP_DEPL_NAME
+  namespace: K8S_NAMESPACE
+spec:
+  replicas: REPL_FACTOR
+  revisionHistoryLimit: 15
+  template:
+    metadata:
+      labels:
+        app: APP_LABEL
+    spec:
+      containers:
+      - name: CONTAINER_NAME
+        image: SOURCE_IMAGE
+        resources:
+          requests:
+            cpu: "0.25"
+            memory: "0.25G"
+          limits:
+            cpu: "1"
+            memory: "1.5G"
+        ports:
+        - containerPort: CONTAINER_PORT
+
